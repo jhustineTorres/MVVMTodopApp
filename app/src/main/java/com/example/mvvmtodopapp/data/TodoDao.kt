@@ -17,7 +17,7 @@ interface TodoDao { // Dao means "Data access object" witch define diff ways to 
     suspend fun deleteTodo(todo: Todo)
 
     @Query("SELECT * FROM todo WHERE id = :id")// use colon ":" like :id to refer in parameter
-    suspend fun getTodoById(id: Todo): Todo? // return null if did not exist to not crash the app
+    suspend fun getTodoById(id: Int): Todo? // return null if did not exist to not crash the app
 
     @Query("SELECT * FROM todo")
     fun getTodos(): Flow<List<Todo>>
